@@ -155,9 +155,7 @@ unsafe impl HasRawDisplayHandle for Window {
             #[cfg(target_os = "windows")]
             SDL_SYSWM_WINDOWS | SDL_SYSWM_WINRT => {
                 use self::raw_window_handle::WindowsDisplayHandle;
-
-                let mut handle = WindowsDisplayHandle::empty();
-
+                let handle = WindowsDisplayHandle::empty();
                 RawDisplayHandle::Windows(handle)
             }
             #[cfg(any(
